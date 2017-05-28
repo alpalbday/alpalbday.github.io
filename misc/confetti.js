@@ -53,7 +53,7 @@ var retina = window.devicePixelRatio,
         DEG_TO_RAD = PI / 180,
         RAD_TO_DEG = 180 / PI,
         colors = [
-          ["#df0049", "#660671"],
+          ["#df0049", "#CA9CE1"],
           ["#00e857", "#005291"],
           ["#2bebbc", "#05798a"],
           ["#ffd200", "#b06c00"]

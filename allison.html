@@ -72,6 +72,23 @@
 	    });
 	  });
 
+	  function switchImagePhone(){
+	  	new Audio('rupee.wav').play();
+	  	$('#phone').attr('src','png/051.png');
+		}
+	  function switchImagePlaylist(){
+	  	new Audio('rupee.wav').play();
+	  	$('#music').attr('src','png/051.png');
+		}
+	  function switchImageArt(){
+	  	new Audio('rupee.wav').play();
+	  	$('#art').attr('src','png/051.png');
+		}
+	  function switchImageHeart(){
+	  	new Audio('rupee.wav').play();
+	  	$('#heart').attr('src','png/051.png');
+		}
+
 	</script>
 	<!-- Favicons
 	================================================== -->
@@ -142,29 +159,30 @@
 				<img class="hvr-bob" alt="coffee" src="png/068.png"  />
 			</a>
 
-			<a href="https://www.dropbox.com/s/srv4g2qdv7b0qcx/allison.mp3?dl=0" target="_blank">
-				<img class="hvr-bob" alt="phone call" src="png/071.png"  />
+			<!-- GIFT. --> 
+			<a href="https://www.dropbox.com/s/srv4g2qdv7b0qcx/allison.mp3?dl=0" target="_blank" onclick="switchImagePhone();">
+				<img class="hvr-bob" alt="phone call" id="phone" src="png/071.png"  />
 			</a>
 
-			<a href="" target="_blank">
-				<img class="hvr-bob" alt="play" src="png/073.png" />
+			<!-- GIFT. ADD SPOTIFY PLAYLIST. --> 
+			<a href="" target="_blank" onclick="switchImagePlaylist();">
+				<img class="hvr-bob" alt="play" id="music" src="png/073.png" />
 			</a>
 
-			<a href="https://paper.dropbox.com/doc/8dL62nFfVgF2g4OGAfR4b" target="_blank">
-				<img class="hvr-bob" alt="disguise" src="png/086.png"  />
+			<!-- GIFT. ADD COMMISSIONED ART. --> 
+			<a href="" target="_blank" onclick="switchImageArt();">
+				<img class="hvr-bob" alt="disguise" id="art" src="png/086.png"  />
 			</a>
 		</div>
 		<div class="row">
-			<a href="https://paper.dropbox.com/doc/8dL62nFfVgF2g4OGAfR4b" target="_blank">
-				<img class="hvr-bob" alt="designer" src="png/013.png"  />
-			</a>
 
-			<a href="https://paper.dropbox.com/doc/8dL62nFfVgF2g4OGAfR4b" target="_blank">
+			<a href="https://www.google.com/maps/place/1246+Treat+Ave,+San+Francisco,+CA+94110/@37.7502444,-122.4149809,17z/data=!3m1!4b1!4m5!3m4!1s0x808f7e4601e98d21:0x816d2075ce46210a!8m2!3d37.75024!4d-122.412792" target="_blank">
 				<img class="hvr-bob" alt="location ptr" src="png/041.png"  />
 			</a>
 
-			<a href="https://paper.dropbox.com/doc/8dL62nFfVgF2g4OGAfR4b" target="_blank">
-				<img class="hvr-bob" alt="heart" src="png/097.png"  />
+			<!-- GIFT. --> 
+			<a href="https://paper.dropbox.com/doc/8dL62nFfVgF2g4OGAfR4b" target="_blank" onclick="switchImageHeart();">
+				<img class="hvr-bob" alt="heart" id="heart" src="png/097.png"  />
 			</a>
 
 		</div>

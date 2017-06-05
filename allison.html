@@ -95,6 +95,11 @@
 	  	$('#heart').attr('src','png/051.png');
 		}
 
+	  function switchImageTreasureMap(){
+	  	new Audio('rupee.wav').play();
+	  	$('#treasuremap').attr('src','png/051.png');
+		}
+
 	</script>
 	<!-- Favicons
 	================================================== -->
@@ -116,7 +121,8 @@
 
 		<p class="convert-emoji">
 			there are surprises hidden in each of these badges. <br/> when you find a part of your gift,
-			you'll hear a sound and the badge <br/>will turn into a gem. explore + discover!
+			you'll hear a sound and the badge <br/>will turn into a gem. explore + discover!<br/><br/>
+			<small> things are better with sound. </small>
 		</p>
 		<br/>
 
@@ -137,7 +143,7 @@
 		  <div class="modal-content">
 		    <div class="modal-body">
 		      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
+		      <h1 style="color:#000"> hello my name is </h1>
 		    </div>
 		  </div>
 		</div>
@@ -168,7 +174,7 @@
 
 			<!-- GIFT. --> 
 			<a href="https://www.dropbox.com/s/srv4g2qdv7b0qcx/allison.mp3?dl=0" target="_blank" onclick="switchImagePhone();">
-				<img class="hvr-bob" alt="phone call" id="phone" src="png/071.png"  />
+				<img class="hvr-bob" alt="phone call" id="phone" src="png/076.png"  />
 			</a>
 
 			<!-- GIFT. ADD SPOTIFY PLAYLIST. --> 
@@ -177,11 +183,15 @@
 			</a>
 
 			<!-- GIFT. ADD COMMISSIONED ART. --> 
-			<a href="" onclick="switchImageArt();">
-				<img class="hvr-bob" alt="disguise" id="art" src="png/086.png"  />
+			<a href="https://www.dropbox.com/s/vs5c2jself19nak/comic_book_allison.pdf?dl=0" onclick="switchImageArt();" target="_blank">
+				<img class="hvr-bob" alt="disguise" id="art"  src="png/037.png"  />
 			</a>
 		</div>
 		<div class="row">
+
+			<a class="btn btn-default video" data-video="https://www.youtube.com/embed/1_JnbceYHuk" data-toggle="modal" data-target="#videoModal">
+				<img class="hvr-bob" alt="croissant" src="png/012.png"  />
+			</a>
 
 			<a href="https://www.google.com/maps/place/1246+Treat+Ave,+San+Francisco,+CA+94110/@37.7502444,-122.4149809,17z/data=!3m1!4b1!4m5!3m4!1s0x808f7e4601e98d21:0x816d2075ce46210a!8m2!3d37.75024!4d-122.412792" target="_blank">
 				<img class="hvr-bob" alt="location ptr" src="png/041.png"  />
@@ -191,6 +201,16 @@
 			<a href="https://paper.dropbox.com/doc/8dL62nFfVgF2g4OGAfR4b" target="_blank" onclick="switchImageHeart();">
 				<img class="hvr-bob" alt="heart" id="heart" src="png/097.png"  />
 			</a>
+
+			<!-- GIFT. RING PLACEMENT --> 
+			<a  target="_blank" data-toggle="modal" data-target="#bombModal" onclick="switchImageTreasureMap();">
+				<img class="hvr-bob" alt="treasuremap" id="treasuremap" src="png/042.png"  />
+			</a>
+
+
+
+
+
 
 		</div>
 

@@ -36,7 +36,7 @@
 				color: #fff;
 			}
 			.header-box{
-				border-color: #682d63;
+				border-color: #ca9ce1;
 			}
 			#confetti{
 				position: absolute;
@@ -53,6 +53,20 @@
 			.row img {
 				max-width: 60px;
 			}
+			#hidden p {
+				/*line-height: 20px;*/
+				font-size: 14px;
+				color: grey;
+				height: auto;
+			}
+			.zero-hidden, .one-hidden, .two-hidden, .three-hidden {
+				border: 5px solid #000;
+				width: 300px;
+				height: 0px;
+				margin: 0 auto;
+				margin-bottom: 10px;
+			}
+
 		</style>
 	<link rel="stylesheet" href="stylesheets/hover-min.css">
 	<!-- Javascript
@@ -78,26 +92,49 @@
 	    });
 	  });
 
+	  var a = false;
+	  var b = false;
+	  var c = false;
+	  var d = false;
+
 	  function switchImagePhone(){
 	  	new Audio('rupee.wav').play();
+	  	$('#0').show();
+	  	$('.zero-hidden').remove();
+	  	a = true;
 	  	$('#phone').attr('src','png/051.png');
 		}
 	  function switchImagePlaylist(){
 	  	new Audio('rupee.wav').play();
+	  	$('#3').show();
+	  	$('.three-hidden').remove();
+	  	b = true
 	  	$('#music').attr('src','png/051.png');
 		}
 	  function switchImageArt(){
 	  	new Audio('rupee.wav').play();
+	  	$('#1').show();
+	  	$('.one-hidden').remove();
+	  	c = true;
 	  	$('#art').attr('src','png/051.png');
 		}
 	  function switchImageHeart(){
 	  	new Audio('rupee.wav').play();
+	  	$('#2').show();
+	  	$('.two-hidden').remove();
+	  	d = true;
 	  	$('#heart').attr('src','png/051.png');
 		}
 
 	  function switchImageTreasureMap(){
-	  	new Audio('rupee.wav').play();
-	  	$('#treasuremap').attr('src','png/051.png');
+		  	if (a && b && c && d) {
+			  	new Audio('fanfare.wav').play();
+			  	$('#treasuremap').attr('src','png/051.png');
+			}
+			else {
+				console.log("a", a, "b", b, "c", c, "d", d);
+			}
+
 		}
 
 	</script>
@@ -141,9 +178,29 @@
 		<div class="modal fade" id="bombModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 		  <div class="modal-content">
-		    <div class="modal-body">
+		    <div class="modal-body" id="hidden">
 		      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		      <h1 style="color:#000"> hello my name is </h1>
+		      <h1 style="color:#000"> 
+		      	<p style="color: #000">
+					Unlock all of the gems to see the full riddle.
+			    </p>
+				<div class="zero-hidden"></div>
+			    <p style="color: #000; display:none;" id="0">
+			      The location of your final surprise will be revealed by this riddle.
+			    </p>
+		      	<div class="one-hidden" ></div>
+		      	<p style="display: none;"  id="1">
+			      You'll always find me at the hottest clubs.
+			    </p>
+			    <div class="two-hidden" ></div>
+			    <p style="display: none;"  id="2">
+			      I never itch, but I like to be scratched.
+			    </p>
+			    <div class="three-hidden"></div>
+				<p style="display: none;" id="3">
+			      I'm not an athlete, but I've set tons of records.
+			    </p> 
+ 			  </h1>
 		    </div>
 		  </div>
 		</div>
@@ -177,12 +234,12 @@
 				<img class="hvr-bob" alt="phone call" id="phone" src="png/076.png"  />
 			</a>
 
-			<!-- GIFT. ADD SPOTIFY PLAYLIST. --> 
-			<a href="https://paper.dropbox.com/doc/bday-playlist-ZcbER2FTp8zKb4yMUaxjc" target="_blank" onclick="switchImagePlaylist();">
+			<!-- SPOTIFY PLAYLIST. --> 
+			<a href="https://paper.dropbox.com/doc/-1-ZcbER2FTp8zKb4yMUaxjc" target="_blank" onclick="switchImagePlaylist();">
 				<img class="hvr-bob" alt="play" id="music" src="png/073.png" />
 			</a>
 
-			<!-- GIFT. ADD COMMISSIONED ART. --> 
+			<!-- COMMISSIONED ART. --> 
 			<a href="https://www.dropbox.com/s/vs5c2jself19nak/comic_book_allison.pdf?dl=0" onclick="switchImageArt();" target="_blank">
 				<img class="hvr-bob" alt="disguise" id="art"  src="png/037.png"  />
 			</a>
@@ -197,20 +254,15 @@
 				<img class="hvr-bob" alt="location ptr" src="png/041.png"  />
 			</a>
 
-			<!-- GIFT. --> 
-			<a href="https://paper.dropbox.com/doc/8dL62nFfVgF2g4OGAfR4b" target="_blank" onclick="switchImageHeart();">
+			<!-- GIFT. BDAY CARD. --> 
+			<a href="https://paper.dropbox.com/doc/66avF5xUzec69PR3OVXJR" target="_blank" onclick="switchImageHeart();">
 				<img class="hvr-bob" alt="heart" id="heart" src="png/097.png"  />
 			</a>
 
-			<!-- GIFT. RING PLACEMENT --> 
+			<!-- GIFT. RING PLACEMENT. --> 
 			<a  target="_blank" data-toggle="modal" data-target="#bombModal" onclick="switchImageTreasureMap();">
 				<img class="hvr-bob" alt="treasuremap" id="treasuremap" src="png/042.png"  />
 			</a>
-
-
-
-
-
 
 		</div>
 

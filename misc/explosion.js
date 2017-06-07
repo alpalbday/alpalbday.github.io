@@ -322,14 +322,14 @@
         $(document.body).append($stage);
         $stage.css({width: '100%', height: '100%'});
       
-        $restart = createDiv('restart');
-        $stage.append($restart);
-        $restart.css({width: 100, height: 40, top: '50%', left: '50%', marginLeft: -50, marginTop: -20, letterSpacing: '1px', 
-                      background: Colors.white, color: Colors.blue, fontSize: 22, textAlign: 'center', lineHeight: '40px',
-                      cursor: 'pointer', opacity: 0});
-        $restart.html('lol. again?');
-        $restart.on('click', restart);
-        $restart.hide();
+        // $restart = createDiv('restart');
+        // $stage.append($restart);
+        // $restart.css({width: 100, height: 40, top: '50%', left: '50%', marginLeft: -50, marginTop: -20, letterSpacing: '1px', 
+        //               background: Colors.white, color: Colors.blue, fontSize: 22, textAlign: 'center', lineHeight: '40px',
+        //               cursor: 'pointer', opacity: 0});
+        // $restart.html('lol. again?');
+        // $restart.on('click', restart);
+        // $restart.hide();
 
         var velocityScene = new VelocityScene();
         var velocityMask = new VelocityMask();
@@ -351,6 +351,16 @@
           }, 3500);
         }
         
+        setTimeout(animate,10000);
+        setTimeout(animate,20000);
+        setTimeout(animate,30000);
+        setTimeout(animate,40000);
+        setTimeout(animate,50000);
+        setTimeout(animate,60000);
+        setTimeout(animate,70000);
+        setTimeout(animate,80000);
+        setTimeout(animate,90000);
+
 
         function showButton() {
           $restart.css({opacity: 0, transform: $restart.transform({scale: 1})});

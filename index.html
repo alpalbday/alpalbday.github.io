@@ -8,7 +8,7 @@
 <!-- Basic Page Needs
 ================================================== -->
 <meta charset="utf-8">
-<title>who goes there?</title>
+<title>hbd alpal</title>
 
 	<meta name="description" content="happy birthday allison!">
 	<meta name="author" content="neil sethi">
@@ -22,6 +22,7 @@
   ================================================== -->
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/custom.css">
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
 		<style type="text/css">
 			html, body {
@@ -29,10 +30,14 @@
 				padding: 0;
 				height: 100%;
 				width: 100%;
-				background: #000;
+				background: #35363a;
 			}
-			.container{
+			h1, h2, p {
 				color: #fff;
+			}
+
+			.header-box {
+				border-color: #ca9ce1;
 			}
 			#confetti{
 				position: absolute;
@@ -41,46 +46,99 @@
 				height: 100%;
 				width: 100%;
 			}
-			.btn {
-			  border: none;
-			  color: white;
-			  overflow: hidden;
-			  margin: 1rem;
-			  padding: 0;
-			  text-transform: uppercase;
-			  width: 150px;
-			  height: 40px;
+			.row a {
+				margin-left: 1%;
+				margin-right: 1%;
+				text-decoration: none;
 			}
-
-						.btn.color-1 {
-			  background-color: #426FC5;
+			.row img {
+				max-width: 75px;
 			}
-			.material-design {
-			  position: relative;
-			}
-			.material-design canvas {
-			  opacity: 0.25;
-			  position: absolute;
-			  top: 0;
-			  left: 0;
-			}
-			.header-box:hover {
+			#hidden p {
+				/*line-height: 20px;*/
+				font-size: 14px;
 				color: grey;
+				height: auto;
 			}
-
+			.zero-hidden, .one-hidden, .two-hidden, .three-hidden {
+				border: 5px solid #000;
+				width: 300px;
+				height: 0px;
+				margin: 0 auto;
+				margin-bottom: 10px;
+			}
 
 		</style>
+	<link rel="stylesheet" href="stylesheets/hover-min.css">
 	<!-- Javascript
   ================================================== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="misc/bootstrap.min.js"></script>
 	<script>
-		$(document).ready(
+		$(document).ready();
 
-			);
+	  $(function() {
+	    $(".video").click(function () {
+	      var theModal = $(this).data("target"),
+	      videoSRC = $(this).attr("data-video"),
+	      videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+	      $(theModal + ' iframe').attr('src', videoSRCauto);
+	      $(theModal + ' button.close').click(function () {
+	        $(theModal + ' iframe').attr('src', videoSRC);
+	      });
+	      $(theModal).on('hidden.bs.modal', function (e) {
+			$(theModal + ' iframe').attr('src', videoSRC);
+	      });
+	    });
+	  });
+
+	  var a = false;
+	  var b = false;
+	  var c = false;
+	  var d = false;
+
+	  function switchImagePhone(){
+	  	new Audio('rupee.wav').play();
+	  	$('#0').show();
+	  	$('.zero-hidden').remove();
+	  	a = true;
+	  	$('#phone').attr('src','png/051.png');
+		}
+	  function switchImagePlaylist(){
+	  	new Audio('rupee.wav').play();
+	  	$('#3').show();
+	  	$('.three-hidden').remove();
+	  	b = true
+	  	$('#music').attr('src','png/051.png');
+		}
+	  function switchImageArt(){
+	  	new Audio('rupee.wav').play();
+	  	$('#1').show();
+	  	$('.one-hidden').remove();
+	  	c = true;
+	  	$('#art').attr('src','png/051.png');
+		}
+	  function switchImageHeart(){
+	  	new Audio('rupee.wav').play();
+	  	$('#2').show();
+	  	$('.two-hidden').remove();
+	  	d = true;
+	  	$('#heart').attr('src','png/051.png');
+		}
+
+	  function switchImageTreasureMap(){
+		  	if (a && b && c && d) {
+			  	new Audio('fanfare.wav').play();
+			  	$('#treasuremap').attr('src','png/051.png');
+			}
+			else {
+				console.log("a", a, "b", b, "c", c, "d", d);
+			}
+
+		}
 
 	</script>
-
 	<!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="images/favicon.png">
@@ -90,44 +148,134 @@
 
 </head>
 <body>
-
 	<!-- Primary Page Layout
 	================================================== -->
+	<canvas id="confetti" width="1" height="1"></canvas>
 	<div class="container" style="">
 
-		<div class="header-box">
-			<h2>you've wandered far from the woods. <br/><br/>what's the password to get through?</h2>
-			<SCRIPT>
-				function passWord() {
-				var testV = 1;
-				var pass1 = prompt('Complete the word mashup. A word mashup combines two or more words or phrases, like the Jeopardy Game. For example, "Flying Fish and Chips" or "Ice Cream Sandwich Press". Your hint is: a song by Metric off of "Fantasies" and "MY DRINK, MY __________!?" (no punctuation or caps)',' ');
-				while (testV < 3) {
-				if (!pass1) 
-				history.go(-1);
-				if (pass1.toLowerCase() == "diet dr kelp im alive") {
-				alert('Helllllll yeah!');
-				window.open('allison.html');
-				break;
-				} 
-				testV+=1;
-				var pass1 = 
-				prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
-				}
-				if (pass1.toLowerCase()!="password" & testV ==3) 
-				history.go(-1);
-				return " ";
-				} 
-			</SCRIPT>
+		<div class="header-box teal">
+			<h2>happy birthday allison!</h2>
+		</div>
 
-			<CENTER>
-			<FORM>
-			<input type="image" src="png/028.png" width="70px" data-color="#ffffff" value="Enter Protected Area" onClick="passWord()">
-			</FORM>
-			</CENTER>
+		<p class="convert-emoji" >
+			there are surprises hidden in each of these badges.  when you find a part of your gift,<br/>
+			you'll hear a sound and the badge will turn into a gem. explore + discover!<br/><br/>
+			<small> things are better with sound. </small>
+		</p>
+		<br/>
+
+		<!-- Working modal -->
+		<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+		    <div class="modal-body">
+		      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      <iframe width="100%" height="350" src="" frameborder="0" allowfullscreen></iframe>
+		    </div>
+		  </div>
+		</div>
+		</div>
+
+		<div class="modal fade" id="bombModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+		    <div class="modal-body" id="hidden">
+		      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      <h1 style="color:#000"> 
+		      	<p style="color: #000">
+					Unlock all of the gems to see the full riddle.
+			    </p>
+				<div class="zero-hidden"></div>
+			    <p style="color: #000; display:none;" id="0">
+			      The location of your final surprise will be revealed by this riddle:
+			    </p>
+		      	<div class="one-hidden" ></div>
+		      	<p style="display: none;"  id="1">
+			      You'll always find me at the hottest clubs.
+			    </p>
+			    <div class="two-hidden" ></div>
+			    <p style="display: none;"  id="2">
+			      I never itch, but I like to be scratched.
+			    </p>
+			    <div class="three-hidden"></div>
+				<p style="display: none;" id="3">
+			      I'm not an athlete, but I've set tons of records.
+			    </p> 
+ 			  </h1>
+		    </div>
+		  </div>
+		</div>
+		</div>
+
+
+		<div class="row">
+			<a class="btn btn-default video" data-video="https://www.youtube.com/embed/6r27G30KjLw" data-toggle="modal" data-target="#videoModal">
+				<img class="hvr-bob" alt="falling guy" src="png/015.png"  />
+			</a>
+
+			<a href="https://www.google.com/maps/place/1246+Treat+Ave,+San+Francisco,+CA+94110/@37.7502444,-122.4149809,17z/data=!3m1!4b1!4m5!3m4!1s0x808f7e4601e98d21:0x816d2075ce46210a!8m2!3d37.75024!4d-122.412792" target="_blank">
+				<img class="hvr-bob" alt="location ptr" src="png/041.png"  />
+			</a>
+
+
+			<!-- Template video launcher --> 
+			<a href="explosion.html" target="_blank">
+				<img class="hvr-bob" alt="bomb" src="png/038.png"  />
+			</a>	
+
+			<!-- GIFT. BDAY CARD. --> 
+			<a href="https://paper.dropbox.com/doc/xbxtI0XVWcDHumsr9VALp" target="_blank" onclick="switchImageHeart();">
+				<img class="hvr-bob" alt="heart" id="heart" src="png/097.png"  />
+			</a>
+
+		</div>
+		<div class="row">
+
+
+			<a class="btn btn-default video" data-video="https://www.youtube.com/embed/1_JnbceYHuk" data-toggle="modal" data-target="#videoModal">
+				<img class="hvr-bob" alt="croissant" src="png/012.png"  />
+			</a>
+
+			<!-- SPOTIFY PLAYLIST. --> 
+			<a href="https://paper.dropbox.com/doc/K9cXc9qL6dtOtAh8SVFQ8" target="_blank" onclick="switchImagePlaylist();">
+				<img class="hvr-bob" alt="play" id="music" src="png/073.png" />
+			</a>
+
+			<a href="https://www.instagram.com/chrissytretre/" target="_blank">
+				<img class="hvr-bob" alt="coffee" src="png/068.png"  />
+			</a>
+			<!-- COMMISSIONED ART. --> 
+			<a href="https://www.dropbox.com/s/vs5c2jself19nak/comic_book_allison.pdf?dl=0" onclick="switchImageArt();" target="_blank">
+				<img class="hvr-bob" alt="disguise" id="art"  src="png/037.png"  />
+			</a>
+		</div>
+		<div class="row">
+
+			<!-- GIFT. --> 
+			<a href="https://www.dropbox.com/s/srv4g2qdv7b0qcx/allison.mp3?dl=0" target="_blank" onclick="switchImagePhone();">
+				<img class="hvr-bob" alt="phone call" id="phone" src="png/076.png"  />
+			</a>
+
+
+
+			<a class="btn btn-default video" data-video="https://www.youtube.com/embed/gNJ-3blp56w" data-toggle="modal" data-target="#videoModal">
+				<img class="hvr-bob" alt="croissant" src="png/064.png"  />
+			</a>
+		
+			<a class="btn btn-default video" data-video="https://www.youtube.com/embed/-m2fVWj99x4" data-toggle="modal" data-target="#videoModal">
+				<img class="hvr-bob" alt="sun" src="png/030.png"  />
+			</a>
+
+			<!-- GIFT. RING PLACEMENT. --> 
+			<a  target="_blank" data-toggle="modal" data-target="#bombModal" onclick="switchImageTreasureMap();">
+				<img class="hvr-bob" alt="treasuremap" id="treasuremap" src="png/042.png"  />
+			</a>
+
 		</div>
 
 	</div><!-- container -->
 
+	<script src="misc/confetti.js" type="text/javascript"></script>
 
 <!-- End Body
 ================================================== -->
